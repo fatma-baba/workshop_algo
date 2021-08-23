@@ -1,0 +1,33 @@
+ALGORITHM algorithm_name
+VAR
+phrase : STRING := ""
+tmp: CHAR
+taille: INTEGER := 0
+mots: INTEGER := 0
+vowels : INTEGER := 0
+BEGIN
+    REPEAT
+        Read(tmp)
+        phrase := phrase + tmp
+        // taille de phrase 
+        taille = taille + 1
+        // compter le nombre des espaces
+        IF (tmp = " ") THEN
+            mots := mots + 1
+        END_IF
+        // vowels = a , e , i , y , o, u
+        IF (tmp ="a" or tmp="e" or tmp="i" or tmp="y" or tmp="o" or tmp="u") 
+            vowels := vowels + 1
+        END_IF
+        // arreter apres .
+    UNTIL (tmp = ".")
+    // nbr des mots  = nbr_espace + 1 
+    mots := mots + 1
+    Write("length of sentence : ")
+    Write(taille)
+    Write("number of words : ")
+    Write(mots)
+    Write("number of vowels : ")
+    Write(vowels)
+END
+
